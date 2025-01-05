@@ -1,3 +1,13 @@
+import subprocess
+try:
+    import spacy
+except ImportError:
+    subprocess.run(["pip", "install", "spacy"])
+    import spacy
+
+# Ensure the model is downloaded
+subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+
 import streamlit as st
 import spacy
 
